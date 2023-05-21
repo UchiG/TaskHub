@@ -5,13 +5,14 @@
       v-for="task in tasks" 
       :task="task" 
       :key="task.id" 
-      @updated="$event => $emit('updated', $event)"/>
+      @updated="$event => $emit('updated', $event)" />
     </ul>
   </div>
 </template>
 
 <script setup> 
 import Task from './Task.vue';
+
 defineProps({
     tasks: Array,
 

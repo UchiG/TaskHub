@@ -50,7 +50,7 @@ const tasks = ref([]);
     () => tasks.value.filter(task => task.is_completed)
     );
  const showToggleCompletedBtn = computed(
-    () => completedTasks.value.length > 0 && completedTasks.value.length > 0
+    () => uncompletedTasks.value.length > 0 && completedTasks.value.length > 0
     );
 const completedTasksIsVisible = computed(
     () => uncompletedTasks.value.length == 0 || completedTasks.value.length >0
@@ -67,7 +67,7 @@ const handleUpdatedTask = async (task) => {
         task.id, {
         name: task.name
         }
-        );
+    );
     const currentTask = tasks.value.find(item => item.id === task.id)
     currentTask.name = updatedTask.data.name
 }
