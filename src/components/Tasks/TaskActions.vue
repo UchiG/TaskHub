@@ -15,8 +15,8 @@
 </template>
 
 <script setup>
-import IconPencil from '../Icons/IconPencil.vue';
-import IconTrash from '../Icons/IconTrash.vue';
+import IconPencil from '../icons/IconPencil.vue';
+import IconTrash from '../icons/IconTrash.vue';
 
 const emit = defineEmits(['edit', 'remove'])
 </script>
