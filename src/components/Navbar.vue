@@ -37,6 +37,8 @@
     </nav>
 </template>
 
-<script>
-
-</script>
+<style scoped>
+/* .nav-link.router-link-active {
+    color: rgba(0,0,0,.9);
+} */
+</style>
