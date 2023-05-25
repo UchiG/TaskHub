@@ -3,8 +3,14 @@ import RegisterPage from '../pages/RegisterPage.vue';
 import LoginPage from '../pages/LoginPage.vue';
 import SummaryPage from '../pages/SummaryPage.vue';
 import NotFoundErrorPage from '../pages/errors/NotFoundErrorPage.vue';
+import HomePage from '../pages/HomePage.vue';
 
 const routes = [
+    {
+        path: '/',
+        component: HomePage,
+        name: 'home',
+    },
     {
         path: '/tasks',
         component: TaskPage,
