@@ -1,12 +1,12 @@
 <script setup>
-import Navbar from "./components/Navbar.vue"
-import Footer from "./components/Footer.vue"
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
   <Navbar />
-  <router-view>
-    <transition>
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
       <component :is="Component" />
     </transition>
   </router-view>
@@ -14,15 +14,14 @@ import Footer from "./components/Footer.vue"
 </template>
 
 <style scoped>
-    .fade-enter-active, 
-    
-    .fade-leave-active {
-        transition: opacity 0.5s ease;
-    }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
 
-    .fade-enter-from,
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 
-    .fade-leave-to {
-        opacity: 0;
-    }
 </style>
