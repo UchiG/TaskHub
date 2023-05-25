@@ -4,11 +4,11 @@
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Organize your ideas, and be productive everyday.</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href="register.html" class="btn btn-primary btn-lg px-4 gap-3"
-          >Sign up</a
+        <router-link :to="{ name: 'register' }" class="btn btn-primary btn-lg px-4 gap-3"
+          >Sign up</router-link
         >
-        <a href="login.html" class="btn btn-outline-secondary btn-lg px-4"
-          >Sign in</a
+        <router-link :to="{ name: 'login' }" class="btn btn-outline-secondary btn-lg px-4"
+          >Sign in</router-link
         >
       </div>
     </div>
