@@ -1,16 +1,17 @@
 <template>
   <main class="auth-wrapper">
-    <form class="auth-form">
+    <form class="auth-form" @submit.prevent="handleSubmit">
       <h1>
-        <span>ToeDoe</span>
-        <strong>List</strong>
+        <span>Task</span>
+        <strong>Hub</strong>
       </h1>
       <h2 class="h3 mb-4 fw-normal">Please sign in</h2>
+      {{ form }}
       <div class="form-floating mb-2">
         <input
           type="email"
           class="form-control"
-          id="email"
+          id="email" v-model="form.email"
           placeholder="name@example.com"
         />
         <label for="email">Email</label>
@@ -19,7 +20,7 @@
         <input
           type="password"
           class="form-control"
-          id="password"
+          id="password" v-model="form.password"
           placeholder="Password"
         />
         <label for="password">Password</label>
@@ -34,11 +35,21 @@
 
 <script setup>
 import { useRouter } from "vue-router"
+import { reactive } from "vue"
+import { useAuthStore } from "../stores/auth"
+
 
 const router = useRouter()
+const store = useAuthStore()
 
-const handleClick = () => {
-  router.push({ name: "tasks" })
+const form = reactive({
+  email: "",
+  password: "",
+})
+
+const handleSubmit = async () => {
+    await store.handleLogin(form)
+    router.push({ name: "tasks" })
 }
 </script>
 

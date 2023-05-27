@@ -8,8 +8,12 @@ export const useAuthStore = defineStore('auth', () => {
     const isLoggedIn = computed(() => !!user.value)
 
     const fetchUser = async () => {
-        const { data } = await getUser()
-        user.value = data
+        try {
+            const { data } = await getUser()
+            user.value = data
+        } catch {
+            user.value = null
+        }
     }
 
     const handleLogin = async (credentials) => {
