@@ -2,8 +2,8 @@
     <main class="auth-wrapper">
         <form class="auth-form" @submit.prevent="handleSubmit">
             <h1>
-                <span>Task</span>
-                <strong>Hub</strong>
+                <span>ToeDoe</span>
+                <strong>List</strong>
             </h1>
             <h2 class="h3 mb-4 fw-normal">Please sign in</h2>
             <div class="form-floating mb-2">
